@@ -25,8 +25,8 @@ import timeit
 import random
 import multiprocessing
 
-
 witness_type = 'segwit'
+
 
 def address_search(search_for='l200wd'):
     global witness_type
@@ -65,8 +65,7 @@ def address_search(search_for='l200wd'):
 
 
 def main():
-    # print(multiprocessing.cpu_count())
-    processors = 8
+    processors = multiprocessing.cpu_count()
     print("Starting %d processes" % processors)
     ps = []
     for i in range(processors):
