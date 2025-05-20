@@ -57,7 +57,7 @@ def address_search(search_for='l200wd'):
         address = k.address()
         count += 1
         if not count % 10000:
-            print("Searched %d in %d seconds (pid %d)" % (count, timeit.default_timer()-start, os.getpid()))
+            print("Searched %d in %d seconds by worker pid-%d" % (count, timeit.default_timer()-start, os.getpid()))
 
     print("Found address %s" % address)
     print("Private key HEX %s" % k.private_hex)
