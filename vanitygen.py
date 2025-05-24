@@ -28,9 +28,9 @@ import multiprocessing
 witness_type = 'segwit'
 
 
-def address_search(search_for='l200wd'):
+def address_search(search_for='l8'):
     global witness_type
-    privkey = random.randrange(2**256)
+    privkey = random.randrange(2**128)
     address = ''
     count = 0
     start = timeit.default_timer()
@@ -56,7 +56,7 @@ def address_search(search_for='l200wd'):
         k = HDKey(witness_type=witness_type)
         address = k.address()
         count += 1
-        if not count % 10000:
+        if not count % 1000000:
             print("Searched %d in %d seconds by worker pid-%d" % (count, timeit.default_timer()-start, os.getpid()))
 
     print("Found address %s" % address)
